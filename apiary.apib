@@ -1,0 +1,51 @@
+FORMAT: 1A
+HOST: http://api.spiderlog.net
+
+#Spider Log API
+Provides service for the spider log app
+
+## Spiders [/spiders{?page,size}]
+### Get Spiders [GET]
+
++ Parameters
+
+    + page (required, number) 
+    
+    + size (required, number) 
+
++ Request
+    
+    + Header
+    
+            Authorization: Basic dXNlcjpwYXNzd29yZA==
+            x-api-version: 1.0
+        
++ Response 200 (application/json)
+
+    + Header
+
+            ETag : "xasdfasdf"
+            cache-control: max-age=600
+                
+    + Body
+    
+            {
+                "page":
+                        {
+                        "number":1,
+                        "size":10,
+                        "totalpages":20
+                        }
+                ,
+                "spiders":
+                    [
+                        {"sightedAt":"2004-12-01",
+                        "imageUrl":"http://test"
+                        "description":"desc"
+                        "tags":["stripy]
+                        }
+                    ]
+            }
+        
+#Group Spiders
+Access to Spider resource
